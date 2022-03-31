@@ -15,4 +15,5 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag athome176/standalone_flyway:$(date +%s)
+      run: docker build . --file Dockerfile --tag standalone_flyway:latest
+    - run: docker push athome176/standalone_flyway:latest
