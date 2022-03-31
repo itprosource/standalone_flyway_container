@@ -1,0 +1,12 @@
+# Get the Flyway image from Flyway.
+FROM flyway/flyway
+
+# Set the working directory to /flyway, which is essentially the Flyway root
+WORKDIR /flyway
+
+# Copy over the DB credentials file
+COPY flyway.conf /flyway/conf
+
+COPY V1__create_table.sql /flyway/sql
+
+CMD [ "migrate" ]
